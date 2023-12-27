@@ -1,0 +1,185 @@
+name: "Checks"
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  filter:
+    runs-on: ubuntu-22.04
+    outputs:
+      check-frontend: ${{ steps.needs.outputs.check-frontend }}
+      check-backend: ${{ steps.needs.outputs.check-backend }}
+      check-docs: ${{ steps.needs.outputs.check-docs }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Paths Changes Filter
+        uses: dorny/paths-filter@v2.11.1
+        id: changes
+        with:
+          filters: |
+            check-frontend:
+              - 'apps/frontend/**/*'
+              - 'packages/eslint-config-custom/**/*'
+              - 'packages/icon/**/*'
+              - 'packages/panda-preset/**/*'
+              - 'packages/tsconfig/**/*'
+              - 'packages/ui/**/*'
+              - 'package.json'
+            check-backend:
+              - 'apps/backend/**/*'
+              - 'packages/eslint-config-custom/**/*'
+              - 'packages/tsconfig/**/*'
+              - 'package.json'
+            check-docs:
+              - 'apps/docs/**/*'
+              - 'packages/eslint-config-custom/**/*'
+              - 'packages/tsconfig/**/*'
+              - 'package.json'
+      - name: Output Needs
+        id: needs
+        run: |
+          echo "check-frontend=${{ steps.changes.outputs.check-frontend == 'true' }}" >> $GITHUB_OUTPUT
+          echo "check-backend=${{ steps.changes.outputs.check-backend == 'true' }}" >> $GITHUB_OUTPUT
+          echo "check-docs=${{ steps.changes.outputs.check-docs == 'true' }}" >> $GITHUB_OUTPUT
+
+  lint:
+    runs-on: ubuntu-22.04
+    if: ${{ github.event_name == 'pull_request' && github.actor != 'dependabot[bot]' && !startsWith(github.head_ref, 'dependabot/') }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
+
+      - id: app-token
+        name: Create GitHub App Token
+        uses: actions/create-github-app-token@v1.6.2
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.4.0
+
+      - name: Clean install using pnpm
+        shell: bash
+        run: pnpm install --filter=docs --frozen-lockfile
+
+      - id: require-verified-commits
+        name: Require verified commits
+        uses: yumemi-inc/require-verified-commits-action@v1
+        continue-on-error: true
+
+      - id: pr-warnings
+        name: Find existing warnings in the PR
+        uses: peter-evans/find-comment@v2.4.0
+        with:
+          issue-number: "${{ github.event.pull_request.number }}"
+          body-includes: "<!-- tag:unverified -->"
+
+      - name: Warn unverified commits
+        if: steps.require-verified-commits.outcome == 'failure' && steps.pr-warnings.outputs.comment-id == ''
+        run: |
+          gh pr comment -F - '${{ github.event.pull_request.html_url }}' <<EOS
+          <!-- tag:unverified -->
+          @${{ github.event.pull_request.user.login }}
+          Beep boop...
+          Pull Request を作成していただきありがとうございます．
+
+          突然ですが，この PR に含まれるコミットの一部または全部に署名がされていないようです．
+          現在の状態では，リポジトリにアクセスできる全員が **あなたになりすましてコミットを作成できます** ．
+          あなたの名前で悪意のあるコミットを作成することも可能といえます．
+
+          コミットへの署名は GPG (OpenPGP), S/MIME, または SSH の鍵を使って行えます．
+          Identity の考え方から GPG の利用を推奨しますが， GitHub ではいずれも Verified となりますので，
+          ぜひいずれかの設定をお願いします．
+
+          コミットへの署名については以下の公式ドキュメントを参照してください:
+          https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification
+
+          公式ドキュメントではないですが，署名がないことによってなりすましが行えるしくみについては以下で説明されています:
+          https://qiita.com/s6n/items/bb869f740a53a3bf169e
+
+          GPG の設定と運用については以下の記事で詳しく説明されています:
+          https://qiita.com/shun-shobon/items/a944416bebb6207016fb
+
+          Happy Coding! 🔑
+          EOS
+
+  test-frontend:
+    runs-on: ubuntu-22.04
+    needs: filter
+    if: needs.filter.outputs.check-frontend == 'true'
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.4.0
+
+      - name: Clean install using pnpm
+        shell: bash
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build --filter=frontend
+
+      - name: Unit Test
+        run: pnpm run test --filter=frontend...
+
+  test-backend:
+    runs-on: ubuntu-22.04
+    needs: filter
+    if: needs.filter.outputs.check-backend == 'true'
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.4.0
+
+      - name: Clean install using pnpm
+        shell: bash
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build --filter=backend
+
+      - name: Unit Test
+        run: pnpm run test --filter=backend...
+
+  test-docs:
+    runs-on: ubuntu-22.04
+    needs: filter
+    if: needs.filter.outputs.check-docs == 'true'
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.4.0
+
+      - name: Clean install using pnpm
+        shell: bash
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build --filter=docs
+
+      - name: Unit Test
+        run: pnpm run test --filter=docs...

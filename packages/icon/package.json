@@ -1,0 +1,27 @@
+{
+  "name": "icon",
+  "private": true,
+  "main": "index.mjs",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "svgr -d dist/icons -- assets && tsup dist/icons/index.ts --format cjs,esm --dts --out-dir dist"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.45",
+    "@svgr/cli": "8.1.0",
+    "react": "^18.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "5.3.3",
+    "tsconfig": "workspace:*"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}
