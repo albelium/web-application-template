@@ -77,7 +77,7 @@ jobs:
         id: cloudflare-pages
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           projectName: web-application-template-docs
           directory: ./apps/docs/build
           gitHubToken: ${{ steps.app-token.outputs.token }}
