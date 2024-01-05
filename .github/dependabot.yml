@@ -45,6 +45,10 @@ updates:
       refine:
         patterns:
           - "@refinedev/*"
+      turbo:
+        patterns:
+          - "turbo"
+          - "@turbo/*"
 
   - package-ecosystem: 'github-actions'
     directory: '/'
