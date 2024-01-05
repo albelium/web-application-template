@@ -42,6 +42,9 @@ updates:
       pandacss:
         patterns:
           - "@pandacss/*"
+      refine:
+        patterns:
+          - "@refinedev/*"
 
   - package-ecosystem: 'github-actions'
     directory: '/'
