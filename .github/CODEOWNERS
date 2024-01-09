@@ -1,7 +1,7 @@
 # Team 名で指定。 すべてのファイルに web-application-template-maintainers チームの全員が権限を持つ
-* @albelium/web-application-template-maintainers
+* @albelium/web-application-template-maintainers @albelium-bot[bot]
 
 # GitHub や Tools 関連は @tatsutakein がオーナとなる
-/.github/ @tatsutakein
+/.github/ @tatsutakein @albelium-bot[bot]
 /scripts/ @tatsutakein
 /tools/ @tatsutakein

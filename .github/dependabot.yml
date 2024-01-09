@@ -49,6 +49,10 @@ updates:
         patterns:
           - "turbo"
           - "@turbo/*"
+      astro:
+        patterns:
+          - "astro"
+          - "@astrojs/*"
 
   - package-ecosystem: 'github-actions'
     directory: '/'

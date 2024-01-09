@@ -6,15 +6,15 @@ on:
       - main
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: preview-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  filter:
+  changed:
     runs-on: ubuntu-22.04
 
     outputs:
-      publish-docs: ${{ steps.needs.outputs.publish-docs }}
+      docs: ${{ steps.needs.outputs.docs }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -24,18 +24,18 @@ jobs:
         id: changes
         with:
           filters: |
-            publish-docs:
+            docs:
               - 'apps/docs/**/*'
               - 'package.json'
       - name: Output Needs
         id: needs
         run: |
-          echo "publish-docs=${{ steps.changes.outputs.publish-docs == 'true' }}" >> $GITHUB_OUTPUT
+          echo "docs=${{ steps.changes.outputs.docs == 'true' }}" >> $GITHUB_OUTPUT
 
-  publish-docs:
+  preview-docs:
     runs-on: ubuntu-22.04
-    needs: filter
-    if: needs.filter.outputs.publish-docs == 'true'
+    needs: changed
+    if: needs.changed.outputs.docs == 'true'
 
     permissions:
       contents: write
@@ -74,6 +74,6 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           projectName: web-application-template-docs
-          directory: ./apps/docs/build
+          directory: ./apps/docs/dist
           gitHubToken: ${{ steps.app-token.outputs.token }}
           branch: preview${{ github.ref }}
