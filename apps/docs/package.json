@@ -13,10 +13,10 @@
     "clean:dist": "rimraf dist"
   },
   "dependencies": {
-    "@astrojs/check": "0.5.3",
+    "@astrojs/check": "0.5.4",
     "@astrojs/starlight": "0.18.0",
-    "@astrojs/ts-plugin": "1.5.1",
-    "astro": "4.3.6",
+    "@astrojs/ts-plugin": "1.5.2",
+    "astro": "4.3.7",
     "sharp": "0.33.2"
   },
   "devDependencies": {
