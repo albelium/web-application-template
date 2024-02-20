@@ -27,7 +27,7 @@
     "@pandacss/dev": "0.31.0",
     "@testing-library/react": "14.2.1",
     "@types/node": "20.11.19",
-    "@types/react": "18.2.56",
+    "@types/react": "18.2.57",
     "@types/react-dom": "18.2.19",
     "@vitejs/plugin-react": "4.2.1",
     "eslint-config-custom": "workspace:*",
