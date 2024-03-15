@@ -23,7 +23,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.34.3",
+    "@pandacss/dev": "0.35.0",
     "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
