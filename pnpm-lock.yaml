@@ -6759,7 +6759,7 @@ packages:
       minimatch: 9.0.3
       node-plop: 0.26.3
       proxy-agent: 6.3.0
-      ts-node: 10.9.2(@swc/core@1.4.7)(@types/node@20.11.27)(typescript@5.4.2)
+      ts-node: 10.9.2(@swc/core@1.4.8)(@types/node@20.11.27)(typescript@5.4.2)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.0
     transitivePeerDependencies:
