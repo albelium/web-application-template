@@ -41,7 +41,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "eslint-config-custom": "workspace:*",
     "eslint-plugin-storybook": "0.8.0",
-    "happy-dom": "13.8.6",
+    "happy-dom": "13.9.0",
     "panda-preset": "workspace:*",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
