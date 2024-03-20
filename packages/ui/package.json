@@ -33,7 +33,7 @@
     "@storybook/react": "^7.6.17",
     "@storybook/react-vite": "^7.6.17",
     "@storybook/test": "^7.6.17",
-    "@testing-library/react": "14.2.1",
+    "@testing-library/react": "14.2.2",
     "@turbo/gen": "1.12.5",
     "@types/node": "20.11.30",
     "@types/react": "18.2.67",
