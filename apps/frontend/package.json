@@ -34,7 +34,7 @@
     "happy-dom": "13.9.0",
     "panda-preset": "workspace:*",
     "tsconfig": "workspace:*",
-    "typescript": "5.4.3",
+    "typescript": "5.4.4",
     "vitest": "1.4.0"
   },
   "volta": {
