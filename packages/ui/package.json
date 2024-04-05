@@ -37,7 +37,7 @@
     "@turbo/gen": "1.13.2",
     "@types/node": "20.12.3",
     "@types/react": "18.2.74",
-    "@types/react-dom": "18.2.23",
+    "@types/react-dom": "18.2.24",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint-config-custom": "workspace:*",
     "eslint-plugin-storybook": "0.8.0",
