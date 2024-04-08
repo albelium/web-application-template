@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.1.4",
-    "@pandacss/dev": "0.37.1",
+    "@pandacss/dev": "0.37.2",
     "@testing-library/react": "14.2.2",
     "@types/node": "20.12.4",
     "@types/react": "18.2.74",
