@@ -42,8 +42,8 @@ importers:
         specifier: 9.1.0
         version: 9.1.0
       '@pothos/core':
-        specifier: 3.41.0
-        version: 3.41.0(graphql@16.8.1)
+        specifier: 3.41.1
+        version: 3.41.1(graphql@16.8.1)
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
@@ -4753,8 +4753,8 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /@pothos/core@3.41.0(graphql@16.8.1):
-    resolution: {integrity: sha512-Nb7uPDTXVjdrWqHs5aoD1r6JEdQ9FnJYlf7gv47o1b/bb8rVDAZQaviVvaChal7YQcyFGgCFb0/YNNHLNBEjNw==}
+  /@pothos/core@3.41.1(graphql@16.8.1):
+    resolution: {integrity: sha512-K+TGTK2Q7rmLU9WaC1cSDiGZaU9M+gHNbCYBom2W1vHuEYDUAiihVHz9tXYsrYjFMJSK+wLJ7Xp2374bQa9x/w==}
     peerDependencies:
       graphql: '>=15.1.0'
     dependencies:
