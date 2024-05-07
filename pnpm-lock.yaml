@@ -103,8 +103,8 @@ importers:
         specifier: 0.5.10
         version: 0.5.10(prettier@3.2.5)(typescript@5.4.5)
       '@astrojs/starlight':
-        specifier: 0.22.1
-        version: 0.22.1(astro@4.7.1)
+        specifier: 0.22.2
+        version: 0.22.2(astro@4.7.1)
       '@astrojs/ts-plugin':
         specifier: 1.6.1
         version: 1.6.1
@@ -811,8 +811,8 @@ packages:
       zod: 3.23.6
     dev: false
 
-  /@astrojs/starlight@0.22.1(astro@4.7.1):
-    resolution: {integrity: sha512-RATQZ4AVr78K30rupsNGTC+JLtHNimHpBtbslzC1bPoaG/TetTi6iUX8dQhHARKstq6sSBatYkZJcX3CGgzS2w==}
+  /@astrojs/starlight@0.22.2(astro@4.7.1):
+    resolution: {integrity: sha512-z9OR6ChDKIqaw8P9Xer0u7mG33icnszBhqi28BAb1zDt21yHgOjXcGbP73T+3bzG1aWdZD85/4WmktufzD1DPA==}
     peerDependencies:
       astro: ^4.2.7
     dependencies:
