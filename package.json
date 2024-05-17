@@ -15,7 +15,7 @@
     "test:watch": "turbo test:watch"
   },
   "devDependencies": {
-    "eslint": "8.57.0",
+    "eslint": "9.2.0",
     "prettier": "3.2.5",
     "rimraf": "5.0.7",
     "turbo": "1.13.3"
