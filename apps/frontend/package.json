@@ -23,7 +23,7 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "14.2.3",
+    "@next/eslint-plugin-next": "14.2.4",
     "@pandacss/dev": "0.40.1",
     "@testing-library/react": "14.3.0",
     "@types/node": "20.14.2",
