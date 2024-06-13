@@ -23,7 +23,7 @@
     "@pothos/core": "3.41.1",
     "dotenv": "16.4.5",
     "fastify": "4.27.0",
-    "graphql": "16.8.1"
+    "graphql": "16.8.2"
   },
   "devDependencies": {
     "@faker-js/faker": "8.4.1",
