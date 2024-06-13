@@ -14,7 +14,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@apollo/client": "3.10.4",
+    "@apollo/client": "3.10.5",
     "@apollo/experimental-nextjs-app-support": "0.10.1",
     "graphql": "16.8.1",
     "next": "14.2.4",
