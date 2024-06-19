@@ -168,8 +168,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
       happy-dom:
-        specifier: 13.9.0
-        version: 13.9.0
+        specifier: 14.12.0
+        version: 14.12.0
       panda-preset:
         specifier: workspace:*
         version: link:../../packages/panda-preset
@@ -181,7 +181,7 @@ importers:
         version: 5.4.5
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@types/node@20.14.5)(happy-dom@13.9.0)
+        version: 1.6.0(@types/node@20.14.5)(happy-dom@14.12.0)
 
   packages/eslint-config-custom:
     devDependencies:
@@ -319,8 +319,8 @@ importers:
         specifier: 0.8.0
         version: 0.8.0(eslint@8.57.0)(typescript@5.4.5)
       happy-dom:
-        specifier: 13.9.0
-        version: 13.9.0
+        specifier: 14.12.0
+        version: 14.12.0
       icon:
         specifier: workspace:*
         version: link:../icon
@@ -350,7 +350,7 @@ importers:
         version: 5.3.1(@types/node@20.14.5)
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@types/node@20.14.5)(happy-dom@13.9.0)
+        version: 1.6.0(@types/node@20.14.5)(happy-dom@14.12.0)
 
 packages:
 
@@ -6978,7 +6978,7 @@ packages:
       dom-accessibility-api: 0.5.16
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 1.6.0(@types/node@20.14.5)(happy-dom@13.9.0)
+      vitest: 1.6.0(@types/node@20.14.5)(happy-dom@14.12.0)
     dev: true
 
   /@testing-library/react@14.3.0(react-dom@18.3.1)(react@18.3.1):
@@ -11957,8 +11957,8 @@ packages:
       uglify-js: 3.18.0
     dev: true
 
-  /happy-dom@13.9.0:
-    resolution: {integrity: sha512-hMzsFn2x+B61TF7wsJ3La/exaxW9AWZePlNGzAkMvoVYXI3pMqPSGTT1qXTwcsVLB+44TM8KjHuoQLLx4EX9Vg==}
+  /happy-dom@14.12.0:
+    resolution: {integrity: sha512-dHcnlGFY2o2CdxfuYpqwSrBrpj/Kuzv4u4f3TU5yHW1GL24dKij4pv1BRjXnXc3uWo8qsCbToF9weaDsm/He8A==}
     engines: {node: '>=16.0.0'}
     dependencies:
       entities: 4.5.0
@@ -18645,7 +18645,7 @@ packages:
       vite: 5.3.1(@types/node@20.14.5)
     dev: false
 
-  /vitest@1.6.0(@types/node@20.14.5)(happy-dom@13.9.0):
+  /vitest@1.6.0(@types/node@20.14.5)(happy-dom@14.12.0):
     resolution: {integrity: sha512-H5r/dN06swuFnzNFhq/dnz37bPXnq8xB2xB5JOVk8K09rUtoeNN+LHWkoQ0A/i3hvbUKKcCei9KpbxqHMLhLLA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -18680,7 +18680,7 @@ packages:
       chai: 4.3.10
       debug: 4.3.4
       execa: 8.0.1
-      happy-dom: 13.9.0
+      happy-dom: 14.12.0
       local-pkg: 0.5.0
       magic-string: 0.30.10
       pathe: 1.1.2
