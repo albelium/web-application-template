@@ -16,7 +16,7 @@
     "@astrojs/check": "0.7.0",
     "@astrojs/starlight": "0.24.5",
     "@astrojs/ts-plugin": "1.8.0",
-    "astro": "4.11.3",
+    "astro": "4.11.5",
     "sharp": "0.33.4"
   },
   "devDependencies": {
