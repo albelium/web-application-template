@@ -144,8 +144,8 @@ importers:
         version: link:../../packages/ui
     devDependencies:
       '@next/eslint-plugin-next':
-        specifier: 14.2.4
-        version: 14.2.4
+        specifier: 14.2.5
+        version: 14.2.5
       '@pandacss/dev':
         specifier: 0.41.0
         version: 0.41.0(typescript@5.5.3)
@@ -4446,8 +4446,8 @@ packages:
     resolution: {integrity: sha512-3EtkY5VDkuV2+lNmKlbkibIJxcO4oIHEhBWne6PaAp+76J9KoSsGvNikp6ivzAT8dhhBMYrm6op2pS1ApG0Hzg==}
     dev: false
 
-  /@next/eslint-plugin-next@14.2.4:
-    resolution: {integrity: sha512-svSFxW9f3xDaZA3idQmlFw7SusOuWTpDTAeBlO3AEPDltrraV+lqs7mAc6A27YdnpQVVIA3sODqUAAHdWhVWsA==}
+  /@next/eslint-plugin-next@14.2.5:
+    resolution: {integrity: sha512-LY3btOpPh+OTIpviNojDpUdIbHW9j0JBYBjsIp8IxtDFfYFyORvw3yNq6N231FVqQA7n7lwaf7xHbVJlA1ED7g==}
     dependencies:
       glob: 10.3.10
     dev: true
