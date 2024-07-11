@@ -100,11 +100,11 @@ importers:
   apps/docs:
     dependencies:
       '@astrojs/check':
-        specifier: 0.8.0
-        version: 0.8.0(prettier@3.3.2)(typescript@5.5.3)
+        specifier: 0.8.1
+        version: 0.8.1(prettier@3.3.2)(typescript@5.5.3)
       '@astrojs/starlight':
-        specifier: 0.25.0
-        version: 0.25.0(astro@4.11.5)
+        specifier: 0.25.1
+        version: 0.25.1(astro@4.11.5)
       '@astrojs/ts-plugin':
         specifier: 1.9.0
         version: 1.9.0
@@ -663,13 +663,13 @@ packages:
       fastify-plugin: 4.5.1
     dev: false
 
-  /@astrojs/check@0.8.0(prettier@3.3.2)(typescript@5.5.3):
-    resolution: {integrity: sha512-2nh0Trn0yzMl3VVoPmDliFsgdApcbyspmbRV9chPuOYCHr7LZsapEGLHsLn5b2OMpydqRO38UpuvnzVPqtabHw==}
+  /@astrojs/check@0.8.1(prettier@3.3.2)(typescript@5.5.3):
+    resolution: {integrity: sha512-QTzCuiBWll3SLSe7OsWtWyZRbwChXwxM4Y0Jb84jdPOdYobzHad9ubU7V23qmK3Y0BNwgzCbEP5C5FPVitb31Q==}
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
     dependencies:
-      '@astrojs/language-server': 2.11.0(prettier@3.3.2)(typescript@5.5.3)
+      '@astrojs/language-server': 2.11.1(prettier@3.3.2)(typescript@5.5.3)
       chokidar: 3.6.0
       fast-glob: 3.3.2
       kleur: 4.1.5
@@ -688,8 +688,8 @@ packages:
     resolution: {integrity: sha512-bMf9jFihO8YP940uD70SI/RDzIhUHJAolWVcO1v5PUivxGKvfLZTLTVVxEYzGYyPsA3ivdLNqMnL5VgmQySa+g==}
     dev: false
 
-  /@astrojs/language-server@2.11.0(prettier@3.3.2)(typescript@5.5.3):
-    resolution: {integrity: sha512-GmhF4A2rDCFzk/U0k1ySa8d/p6binaQZQJwSmHsY4Q8aHi5urjkG9csm0ZevKMPJmIRewE4jgh3pwzMGa4e0eQ==}
+  /@astrojs/language-server@2.11.1(prettier@3.3.2)(typescript@5.5.3):
+    resolution: {integrity: sha512-WSIBBUK9lSeVD4KhPiZk2u3wsXdj7WEYvYPPs8ZsgbSVIOzUJWAKVcITHiXmcXlzZB5ubK44YUN/Hq+f2GeMyQ==}
     hasBin: true
     peerDependencies:
       prettier: ^3.0.0
@@ -813,8 +813,8 @@ packages:
       zod: 3.23.8
     dev: false
 
-  /@astrojs/starlight@0.25.0(astro@4.11.5):
-    resolution: {integrity: sha512-1T317AsdmMa+EP0tAPZY84G/9Ez79/8G6fHBaUr994GZSaptpr45vlyxyWtxlgIbdlio2EhKaXay4RVqqUKqXw==}
+  /@astrojs/starlight@0.25.1(astro@4.11.5):
+    resolution: {integrity: sha512-tniE870QpwDs7stJk/qb1LwE78761Fi77qF/UsWedDU90gC6gPjGOHNrbQYUABAmkQ63t3/Jpq9/kmS6sfHT0g==}
     peerDependencies:
       astro: ^4.8.6
     dependencies:
