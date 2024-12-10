@@ -61,7 +61,7 @@ jobs:
         uses: actions/checkout@v4.1.7
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3.0.0
+        uses: pnpm/action-setup@v4.0.0
 
       - name: Clean install using pnpm
         shell: bash
@@ -84,7 +84,7 @@ jobs:
         uses: actions/checkout@v4.1.7
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3.0.0
+        uses: pnpm/action-setup@v4.0.0
 
       - name: Clean install using pnpm
         shell: bash
@@ -107,7 +107,7 @@ jobs:
         uses: actions/checkout@v4.1.7
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3.0.0
+        uses: pnpm/action-setup@v4.0.0
 
       - name: Clean install using pnpm
         shell: bash
